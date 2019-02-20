@@ -9,7 +9,7 @@ Spinit.Build.Versioning helps you keeping your versioning consistent through
 - octopus deployment packages and releases
 - with a little extra effort, your hg repository
 
-
+![schema](Spinit.Build.Versioning.png)
 
 Spinit.Build.Versioning thinks you should adopt semver (`major.minor.patch`), but also thinks that an extra `build` number part looks nice. While you take care of the increments of major, minor and patch numbers in your AssemblyInfo-file, Spinit.Build.Versioning, together with TeamCity and Octopus takes care of the rest, namely:
 
