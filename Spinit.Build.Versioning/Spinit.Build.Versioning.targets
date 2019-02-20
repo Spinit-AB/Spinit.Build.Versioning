@@ -1,0 +1,24 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TeamCity>false</TeamCity>
+    <AssemblyInfoFile>Properties\AssemblyInfo.cs</AssemblyInfoFile>
+  </PropertyGroup>
+  <Target Name="UpdateAssemblyInfoWithBuildNumber" Condition="'$(ExtendTeamCityVersioning)'=='true' Or '$(RunOctoPack)'=='true'" BeforeTargets="BeforeBuild">
+    <FileUpdate Files="$(AssemblyInfoFile)" Regex="(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(BUILD_NUMBER)"/>
+  </Target>
+  <Target Name="EnhanceTeamCityBuildNumber" Condition="'$(ExtendTeamCityVersioning)'=='true' Or '$(RunOctoPack)'=='true'" BeforeTargets="BeforeBuild">
+    <ReadLinesFromFile File="$(AssemblyInfoFile)">
+      <Output TaskParameter="Lines"
+              ItemName="ItemsFromFile"/>
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <Pattern>\[assembly: AssemblyVersion\(.(\d+)\.(\d+)\.(\d+)</Pattern>
+      <In>@(ItemsFromFile)</In>
+      <Out>$([System.Text.RegularExpressions.Regex]::Match($(In), $(Pattern)))</Out>
+    </PropertyGroup>
+    <Message Text="##teamcity[buildNumber '$(Out.Remove(0, 28)).$(BUILD_NUMBER)']" />
+  </Target>
+  <Target Name="RestoreAssemblyInfo" Condition="'$(ExtendTeamCityVersioning)'=='true' Or '$(RunOctoPack)'=='true'" AfterTargets="AfterBuild">
+    <FileUpdate Files="$(AssemblyInfoFile)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3" />
+  </Target>
+</Project>

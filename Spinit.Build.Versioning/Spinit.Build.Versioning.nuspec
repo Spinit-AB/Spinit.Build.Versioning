@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <iconUrl>http://nuget.spinit.local/spinit-logo-nuget.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Spinit Build Versioning</description>
+    <copyright>Copyright 2015</copyright>
+    <tags></tags>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="MSBuildTasks" version="1.4.0.78" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\$id$.targets" target="build" />
+    <file src="bin\$configuration$\install.ps1" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinit.Build.Versioning", "Spinit.Build.Versioning\Spinit.Build.Versioning.csproj", "{F53E64DD-5E1B-4C00-A1FC-D0D791027780}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Nuget|Any CPU = Nuget|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53E64DD-5E1B-4C00-A1FC-D0D791027780}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06F6B1C0-536D-43DC-83DC-8BC5D1C4EFAE}
+	EndGlobalSection
+EndGlobal
